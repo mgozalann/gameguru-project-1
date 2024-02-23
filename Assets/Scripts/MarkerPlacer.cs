@@ -2,6 +2,7 @@
 
 public class MarkerPlacer : MonoBehaviour
 {
+    [SerializeField] private MarkerObjectPool _markerOP;
     [SerializeField] private MatchFinder _matchFinder;
     [SerializeField] private GameObject _xMarker;
     private void Start()
@@ -16,9 +17,12 @@ public class MarkerPlacer : MonoBehaviour
 
     private void PlaceXMarker(Transform pos)
     {
-        GameObject xMarker = Instantiate(_xMarker, pos.position, Quaternion.identity);
-        xMarker.transform.parent = pos;
-        xMarker.transform.localScale = Vector3.one;
+        _xMarker = _markerOP.GetObject();
+        
+        _xMarker.transform.position = pos.position;
+        _xMarker.transform.rotation = Quaternion.identity;
+        _xMarker.transform.parent = pos;
+        _xMarker.transform.localScale = Vector3.one;
     }
     
     private void OnDisable()

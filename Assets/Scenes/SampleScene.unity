@@ -1373,6 +1373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b5fcf950f014d6b9f376b6283a2d9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _markerOP: {fileID: 2136166714}
   _matchFinder: {fileID: 2119037380}
   _xMarker: {fileID: 7378750261938858571, guid: 4b05da55c1763d041986b18d6985581d, type: 3}
 --- !u!4 &2023567693
@@ -1511,5 +1512,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db051a5c42194c0f88cfac173a44dedf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _markerOP: {fileID: 2136166714}
   _inputHandler: {fileID: 1251406547}
   _gridManager: {fileID: 519675648}
+--- !u!1 &2136166713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2136166715}
+  - component: {fileID: 2136166714}
+  m_Layer: 0
+  m_Name: MarkerObjectPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2136166714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136166713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7764c0f58b5384b468927d871e2113f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 7378750261938858571, guid: 4b05da55c1763d041986b18d6985581d, type: 3}
+  _poolSize: 10
+--- !u!4 &2136166715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136166713}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

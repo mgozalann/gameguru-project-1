@@ -8,6 +8,7 @@ public class MatchFinder : MonoBehaviour
     public event Action<Transform> OnGridMarked;
     public event Action OnMatched;
 
+    [SerializeField] private MarkerObjectPool _markerOP;
     [SerializeField] private InputHandler _inputHandler;
     [SerializeField] private GridManager _gridManager;
 
@@ -111,7 +112,7 @@ public class MatchFinder : MonoBehaviour
             if (_chosenGrid.ContainsKey(matchedKey))
             {
                 _chosenGrid.Remove(matchedKey);
-                Destroy(matchedKey.GetChild(0).gameObject); //zaman kalırsa pool a dönüştürülecek ve sistem değişecek.
+                _markerOP.ReturnObject(matchedKey.GetChild(0).gameObject);
             }
         }
         
