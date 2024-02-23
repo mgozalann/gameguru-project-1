@@ -7,10 +7,6 @@ public class GameController : MonoBehaviour
 
     public event Action OnGridReseted;
 
-    // private GameDataSet _gameDataSet;
-    // public GameDataSet GameDataSet => _gameDataSet;
-    
-    
     private void Awake()
     {
         if (Instance == null)
@@ -21,8 +17,6 @@ public class GameController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        //_gameDataSet = GetComponent<GameDataSet>();
     }
 
 
